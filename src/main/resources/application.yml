@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongoDb:
+      uri: mongodb+srv://elijhasalomi:salomi1976@fresh.01mm7.mongodb.net/?retryWrites=true&w=majority
+      database: doto

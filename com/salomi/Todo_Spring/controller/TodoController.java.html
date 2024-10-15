@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>TodoController.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TodoController.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">salomi</span><span class="s2">.</span><span class="s1">Todo_Spring</span><span class="s2">.</span><span class="s1">controller</span><span class="s2">;</span>
+
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">salomi</span><span class="s2">.</span><span class="s1">Todo_Spring</span><span class="s2">.</span><span class="s1">model</span><span class="s2">.</span><span class="s1">Todomodel</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">salomi</span><span class="s2">.</span><span class="s1">Todo_Spring</span><span class="s2">.</span><span class="s1">services</span><span class="s2">.</span><span class="s1">TodoService</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">factory</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">Autowired</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">RestController</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">GetMapping</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">PutMapping</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">PostMapping</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">DeleteMapping</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">RequestBody</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">web</span><span class="s2">.</span><span class="s1">bind</span><span class="s2">.</span><span class="s1">annotation</span><span class="s2">.</span><span class="s1">PathVariable</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+
+<span class="s1">@RestController</span>
+<span class="s0">public class </span><span class="s1">TodoController </span><span class="s2">{</span>
+    <span class="s1">@Autowired</span>
+    <span class="s0">private </span><span class="s1">TodoService tservice</span><span class="s2">;</span>
+
+    <span class="s1">@GetMapping</span><span class="s2">(</span><span class="s3">&quot;/todo&quot;</span><span class="s2">)</span>
+    <span class="s0">public </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Todomodel</span><span class="s2">&gt; </span><span class="s1">getcontrollerTodo</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;gettodo&quot;</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">tservice</span><span class="s2">.</span><span class="s1">GetTodoService</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@PostMapping</span><span class="s2">(</span><span class="s3">&quot;/todo&quot;</span><span class="s2">)</span>
+    <span class="s0">public </span><span class="s1">Todomodel postcontrollerTodo</span><span class="s2">(</span><span class="s1">@RequestBody Todomodel entity</span><span class="s2">){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;postTodo:&quot; </span><span class="s2">+ </span><span class="s1">entity</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">tservice</span><span class="s2">.</span><span class="s1">PostTodoService</span><span class="s2">(</span><span class="s1">entity</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">@PutMapping</span><span class="s2">(</span><span class="s3">&quot;todo/{id}&quot;</span><span class="s2">)</span>
+    <span class="s0">public </span><span class="s1">Todomodel Putcontroller</span><span class="s2">(</span><span class="s1">@PathVariable String id</span><span class="s2">, </span><span class="s1">@RequestBody Todomodel entity</span><span class="s2">){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;putTodo:&quot;</span><span class="s2">+ </span><span class="s1">entity</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">tservice</span><span class="s2">.</span><span class="s1">PutTodoService</span><span class="s2">(</span><span class="s1">entity</span><span class="s2">,</span><span class="s1">id</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">@DeleteMapping</span><span class="s2">(</span><span class="s3">&quot;todo/{id}&quot;</span><span class="s2">)</span>
+    <span class="s0">public </span><span class="s1">String Deletecontroller</span><span class="s2">(</span><span class="s1">@PathVariable String id</span><span class="s2">){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Deleted todo&quot;</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">tservice</span><span class="s2">.</span><span class="s1">DeleteTodoService</span><span class="s2">(</span><span class="s1">id</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
